@@ -1,7 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Provider from "./Provider";
+import Loading from "./loading";
 import Navbar from "./Components/Navbar";
+import { Suspense } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +16,6 @@ const geistMono = Geist_Mono({
 });
 
 
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -22,10 +23,13 @@ export default function RootLayout({ children }) {
         className={` antialiased`}
       >
         <Provider>
-        <div className="w-full flex items-center justify-center relative">          
-          <Navbar />        
-        </div>
-          {children}
+          <div className="w-full flex items-center justify-center relative">
+            <Navbar />
+          </div>
+          <Suspense fallback={<Loading />}>
+            {children}
+          </Suspense>
+
         </Provider>
 
       </body>
