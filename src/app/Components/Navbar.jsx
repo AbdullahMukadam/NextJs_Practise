@@ -2,8 +2,7 @@
 
 import React from "react";
 import {
-    Navbar,
-  
+    Navbar, 
     NavbarContent,
     NavbarItem,
     Link,
@@ -26,8 +25,8 @@ export default function App() {
             <NavbarContent className="w-full" justify="center">
 
                 <NavbarItem>
-                    <Link className="text-white" href="#">
-                        Features
+                    <Link className="text-white" href="/">
+                        Home
                     </Link>
                 </NavbarItem>
                 <NavbarItem >
